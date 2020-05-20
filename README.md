@@ -69,7 +69,7 @@ Pairwise DE analyses between the three patient groups as well as regression of D
   them in `figures/classifier`.
 
 ## Deconvolution analysis
-We used the Human Lung Cell Atlas Dataset [Travaglini et al, (bioRxiv 2019)](https://www.biorxiv.org/content/10.1101/742320v1) to generate the single cell signature files used as the basis for the deconvolution analysis in [CiberSortX](https://www.nature.com/articles/s41587-019-0114-2).
+We used the Human Lung Cell Atlas dataset [Travaglini et al. (bioRxiv 2019)](https://www.biorxiv.org/content/10.1101/742320v1) to generate the single cell signature files used as the basis for the deconvolution analysis in [CiberSortX](https://www.nature.com/articles/s41587-019-0114-2).
 
 Cell deconvolution analysis is in `code/host_deconvolution.ipynb`,
 with results in `results/deconvolution`.
