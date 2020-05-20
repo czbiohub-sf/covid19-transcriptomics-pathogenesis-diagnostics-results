@@ -1,0 +1,97 @@
+Acinetobacter baumannii
+Aspergillus flavus
+Aspergillus fumigatus
+Aspergillus niger
+Aspergillus terreus
+Bacteroides fragilis
+Blastomyces dermatitidis
+Bordetella pertussis
+Burkholderia cenocepacia
+Burkholderia pseudomallei
+Chlamydia pneumoniae
+Chlamydia psittaci
+Citrobacter freundii
+Citrobacter koseri
+Coccidioides immitis
+Coccidioides posadasii
+Coxiella burnetii
+Cryptococcus neoformans
+Cryptococcus gattii VGI
+Cryptococcus gattii VGII
+Cryptococcus gattii VGIII
+Cryptococcus gattii VGIV
+Cryptococcus gattii VGIVj
+Cryptococcus gattii VGIIIc
+Cryptococcus gattii VGV
+Klebsiella aerogenes
+Enterobacter cloacae
+Escherichia coli
+Francisella tularensis
+Fusobacterium necrophorum
+Fusobacterium nucleatum
+Haemophilus influenzae
+Histoplasma capsulatum
+Moraxella catarrhalis
+Morganella morganii
+Mucor
+Mycobacterium tuberculosis
+Mycoplasma pneumoniae
+Nocardia
+Pasteurella multocida
+Pneumocystis jirovecii
+Proteus mirabilis
+Pseudomonas aeruginosa
+Rhizomucor
+Serratia marcescens
+Stenotrophomonas maltophilia
+Streptococcus pneumoniae
+Streptococcus pyogenes
+Streptococcus anginosus
+Streptococcus intermedius
+Streptococcus constellatus
+Staphylococcus aureus
+Mastadenovirus
+Alphacoronavirus
+Betacoronavirus
+Gammacoronavirus
+Cytomegalovirus
+Human betaherpesvirus 5
+Human mastadenovirus A
+Human mastadenovirus B
+Human mastadenovirus C
+Human mastadenovirus D
+Human mastadenovirus E
+Human mastadenovirus F
+Human mastadenovirus G
+Human coronavirus 229E
+Human coronavirus NL63
+Betacoronavirus 1
+Human coronavirus HKU1
+Middle East respiratory syndrome-related coronavirus
+Respirovirus
+Human respirovirus 1
+Human respirovirus 3
+Rubulavirus
+Human rubulavirus 2
+Human rubulavirus 4
+Orthopneumovirus
+Human orthopneumovirus
+Alphainfluenzavirus
+Influenza A virus
+Betainfluenzavirus
+Influenza B virus
+Gammainfluenzavirus
+Influenza C virus
+Rhinovirus A
+Rhinovirus B
+Rhinovirus C
+Klebsiella oxytoca
+Klebsiella pneumoniae
+Legionella pneumophila
+Metapneumovirus
+Human metapneumovirus
+Coronavirus
+Enterovirus
+Human bocavirus
+Parechovirus A
+Primate bocaparvovirus 1

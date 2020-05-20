@@ -1,0 +1,17 @@
+Model,All,COVID vs No virus,Covid vs Other virus
+Full 26-gene model (lasso + randomForest),0.980 (0.951-1.000),0.985 (0.947-1.000),0.966 (0.895-1.000)
+Full 26-gene model (lasso only),0.949 (0.935-0.968),0.967 (0.945-0.997),0.904 (0.855-0.965)
+10-gene model (lasso + randomForest),0.950 (0.918-0.974),0.968 (0.945-0.997),0.905 (0.842-0.959)
+10-gene model (lasso only),0.916 (0.875-0.946),0.960 (0.920-0.995),0.807 (0.724-0.877)
+5-gene model (lasso + randomForest),0.908 (0.863-0.940),0.946 (0.880-1.000),0.811 (0.664-0.918)
+5-gene model (lasso only),0.894 (0.844-0.933),0.956 (0.915-0.987),0.738 (0.658-0.848)
+3-gene model (lasso + randomForest),0.875 (0.782-0.935),0.915 (0.862-0.974),0.772 (0.572-0.965)
+3-gene model (lasso only),0.893 (0.844-0.933),0.956 (0.917-0.987),0.733 (0.651-0.848)
+"Model with Age and Gender covariates
+(20 genes, lasso + randomForest)",0.970 (0.936-0.991),0.974 (0.932-1.000),0.959 (0.914-0.994)
+"Model with Age and Gender covariates
+(10 genes, lasso + randomForest)",0.941 (0.924-0.966),0.961 (0.925-0.995),0.892 (0.855-0.921)
+"Model with Age and Gender covariates
+(5 genes, lasso + randomForest)",0.893 (0.838-0.932),0.934 (0.897-0.984),0.789 (0.684-0.883)
+"Model with Age and Gender covariates
+(3 genes, lasso + randomForest)",0.836 (0.800-0.866),0.934 (0.897-0.986),0.595 (0.513-0.690)

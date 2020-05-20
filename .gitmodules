@@ -1,0 +1,3 @@
+[submodule "code/idseqr"]
+	path = code/idseqr
+	url = https://github.com/czbiohub/idseqr
