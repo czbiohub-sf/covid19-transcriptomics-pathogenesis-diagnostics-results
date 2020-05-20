@@ -68,9 +68,9 @@ genes_to_reg <- union(rownames(sc2_vs_no[sc2_vs_no$adj.P.Val < p_adj_thresh,]),
 # Limit to samples that are positive for SARS-CoV-2 by PCR and have at least 1 rpm by mNGS
 samples_to_reg <- metatable %>% filter(viral_status=="SC2", SC2_rpm >= 1) %>% pull(CZB_ID)
 
-# Perform robust regression of the limma-generated quantile normalized counts (log2 scale) on log10(SC2_rpm + 0.1); +0.1 required to avoid log(0)
+# Perform robust regression of the limma-generated quantile normalized counts (log2 scale) on log10(SC2_rpm)
 rpm_gene_robs <- as.data.frame(t(sapply(genes_to_reg, function(g) {
-  reg_data <- metatable %>% mutate("log_norm_counts" = vwts$E[g, ], "log_rpm" = log10(SC2_rpm + 0.1)) %>% filter(CZB_ID %in% samples_to_reg) 
+  reg_data <- metatable %>% mutate("log_norm_counts" = vwts$E[g, ], "log_rpm" = log10(SC2_rpm)) %>% filter(CZB_ID %in% samples_to_reg) 
   rob_reg <- summary(lmrob(log_norm_counts ~ gender + age + sequencing_batch + log_rpm, 
                            data = reg_data,
                            setting = "KS2014"))
