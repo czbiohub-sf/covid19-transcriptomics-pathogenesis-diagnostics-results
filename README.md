@@ -1,5 +1,5 @@
 # covid19-transcriptomics-pathogenesis-diagnostics-results
-This repo houses code for the analyses in the pre-print "Upper airway gene expression differentiates COVID-19 from other acute respiratory illnesses and reveals suppression of innate immune responses by SARS-CoV-2" by Mick, Kamm, et al. available at https://www.medrxiv.org/content/10.1101/2020.05.18.20105171v1.
+This repo houses code for the analyses in the pre-print "Upper airway gene expression differentiates COVID-19 from other acute respiratory illnesses and reveals suppression of innate immune responses by SARS-CoV-2" by Mick, Kamm, et al. available at https://doi.org/10.1101/2020.05.18.20105171.
 
 The analyses include:
 1. Differential gene expression on metagenomic RNA-sequencing data from nasopharyngeal/oropharyngeal swabs of patients with COVID-19, other viral acute respiratory illnesses (ARIs) or non-viral ARIs.
