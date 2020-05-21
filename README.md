@@ -52,7 +52,7 @@ CSF"). Unzip the reports and then move them into
 ## Gene counts table
 
 Transcript quantification was performed with kallisto (v. 0.46.1, with bias correction) against an index consisting of transcripts of protein coding genes (ENSEMBL v. 99), cytosolic and mitochondrial ribosomal RNA and ERCC RNA standards.<br><br>
-Aggregation to the gene level was done with tximport using countsFromAbundance="lengthScaledTPM". The mapping from transcript ID to gene ID is in `annotations/tx2gene.txt`. The result is in `data/swab_gene_counts.csv`. Note, gene counts in the table were not normalized further. Genes in the table are identified by their ENSEMBL ID. The mapping to gene symbol and chromosome is in `annotations/gene2name.txt`.
+Aggregation to the gene level was done with tximport using countsFromAbundance="lengthScaledTPM". The mapping from transcript ID to gene ID is in `annotations/tx2gene.txt`. Genes were retained for anlaysis if they had at least 10 counts in at least 20% of the samples in the dataset. The counts for those gene are in `data/swab_gene_counts.csv`. Note, gene counts in the table were not normalized further. Genes in the table are identified by their ENSEMBL ID. The mapping to gene symbol and chromosome is in `annotations/gene2name.txt`.
 
 ## DE analysis
 
