@@ -7,9 +7,7 @@ gene_counts_csv = "../data/swab_gene_counts.csv"
 gene2name_txt = "../annotation/gene2name.txt"
 cv_folds_csv = "../results/cv-folds.csv"
 
-metatable_csv <- "~/Box Sync/COVID-mNGS-Study/COVID-host-expression/metatable_age_uncensored_with_viral_status.csv"
-## UNCOMMENT TO USE PUBLIC (AGE-CENSORED) DATA
-#metatable_csv <- "../data/metatable_with_viral_status.csv"
+metatable_csv <- "../data/metatable_with_viral_status.csv"
 
 ## Read data
 

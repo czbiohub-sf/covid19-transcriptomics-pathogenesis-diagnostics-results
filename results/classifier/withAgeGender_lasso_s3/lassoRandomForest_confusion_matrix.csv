@@ -1,4 +1,4 @@
 "","COVID19.pred","NotCovid.pred"
-"COVID19.true",67,27
-"NoVirus.true",7,96
-"OtherVirus.true",22,19
+"COVID19.true",65,28
+"NoVirus.true",6,94
+"OtherVirus.true",21,20
