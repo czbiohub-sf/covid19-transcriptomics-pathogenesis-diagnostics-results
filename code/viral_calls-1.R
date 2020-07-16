@@ -19,7 +19,6 @@ read.csv(idseq_sample_overviews_path, stringsAsFactors=F) %>%
     control=dplyr::case_when(
       water_control=="Yes" ~ TRUE,
       grepl("hela", sample_name, ignore.case=T) ~ TRUE,
-      grepl("water|h2o|h20", sample_name, ignore.case=T) ~ TRUE,
       TRUE ~ FALSE)) %>%
   dplyr::inner_join(read.csv(ngs_samples_path, stringsAsFactors=F)) ->
   sample_overviews
@@ -53,7 +52,7 @@ controls <- with(sample_overviews, sample_name[control])
 ercc_norm <- sample_overviews$total_ercc_reads
 names(ercc_norm) <- sample_overviews$sample_name
 
-batches <- sample_overviews$COMET384
+batches <- sample_overviews$sequencing_batch
 names(batches) <- sample_overviews$sample_name
 
 reports_filterbg <- filter_background(reports, controls,
@@ -78,7 +77,7 @@ reports_filterbg %>%
   geom_point() +
   scale_x_log10() + scale_y_log10() +
   scale_shape_manual(values=c(21, 8)) +
-  facet_wrap(~name+COMET384)
+  facet_wrap(~name+sequencing_batch)
 dev.off()
 
 svg(results_heatmap_path, width=20, height=8)
@@ -97,7 +96,7 @@ reports_filterbg %>%
     ggplot(df, aes(x=sample_name, y=name, fill=nt_count)) +
       geom_tile() +
       geom_point(data=dplyr::filter(df, p_adj < .05, nt_count >= 5)) +
-      facet_grid(category ~ COMET384 + control,
+      facet_grid(category ~ sequencing_batch + control,
                  scales="free", space="free", labeller="label_both") +
       scale_fill_gradientn(colours=c("turquoise", "violet", "orange"), trans="log10") +
       theme_bw() +
