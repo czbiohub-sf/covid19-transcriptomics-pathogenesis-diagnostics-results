@@ -170,7 +170,7 @@ evaluate_at_s <- function(X, X_list, mod, mod_list, s, out_dir) {
 
   rf_list <- mapply(function(X, train) {
     randomForest::randomForest(
-      X[train,], as.factor(dplyr::if_else(covid[train], "COVID19", "NotCovid")), ntree=10000)
+      X[train,], as.factor(dplyr::if_else(covid[train], "COVID19", "NotCovid")), ntree=100000)
   }, X_subsetColumns_list, train_list, SIMPLIFY=FALSE)
 
   rf_probs_list <- mapply(function(rf, X, train){
