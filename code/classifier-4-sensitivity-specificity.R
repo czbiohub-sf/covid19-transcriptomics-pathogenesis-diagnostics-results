@@ -25,6 +25,14 @@ get_accuracy <- function(truth, pred) {
   mean(truth == pred)
 }
 
+get_ppv <- function(truth, pred) {
+  mean((truth == pred)[pred])
+}
+
+get_npv <- function(truth, pred) {
+  mean((truth == pred)[!pred])
+}
+
 get_subtable <- function(name, probs, threshold) {
   metatable %>%
     dplyr::select(CZB_ID, viral_status) %>%
@@ -36,7 +44,9 @@ get_subtable <- function(name, probs, threshold) {
       Threshold=threshold,
       Accuracy=get_accuracy(truth, pred),
       Sensitivity=get_sensitivity(truth, pred),
-      Specificity=get_specificity(truth, pred)
+      Specificity=get_specificity(truth, pred),
+      `Positive Predictive Value`=get_ppv(truth, pred),
+      `Negative Predictive Value`=get_npv(truth, pred)
     ))
 }
 
