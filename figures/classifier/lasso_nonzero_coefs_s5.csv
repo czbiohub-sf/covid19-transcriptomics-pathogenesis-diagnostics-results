@@ -1,7 +1,7 @@
 gene_name,coef
-(Intercept),-3.150
-PCSK5,0.015
+IFI6,0.402
 IL1R2,-0.054
 IL1B,-0.063
-IFI6,0.402
+PCSK5,0.015
 IFI27,0.015
+(Intercept),-3.150
