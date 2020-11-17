@@ -1,5 +1,5 @@
 gene_name,coef
-(Intercept),-2.917
-IL1R2,-0.038
-IL1B,-0.056
-IFI6,0.388
+IFI6,0.372
+IL1R2,-0.037
+IL1B,-0.052
+(Intercept),-2.808

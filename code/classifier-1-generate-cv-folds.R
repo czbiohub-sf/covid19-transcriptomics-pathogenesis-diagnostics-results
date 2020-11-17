@@ -1,7 +1,7 @@
 library(magrittr)
 
 seed = 210274353
-metatable_csv = "../data/metatable_with_mngs_viral_calls.csv"
+metatable_csv = "../data/metatable_with_viral_status.csv"
 folds_out_csv = "../results/cv-folds.csv"
 log_out_csv = "../data/cv-folds.log"
 
@@ -19,9 +19,9 @@ metatable_csv %>%
 ## Create folds. Balance class sizes due to relatively small size of
 ## OtherVirus.
 
-covid_idxs <- metatable$test_result_final=="POS"
-other_idxs <- !covid_idxs & metatable$Other_virus_by_mNGS
-no_virus_idxs <- !covid_idxs & !other_idxs
+covid_idxs <- metatable$viral_status == "SC2"
+other_idxs <- metatable$viral_status == "other_virus"
+no_virus_idxs <- metatable$viral_status == "no_virus"
 
 folds <- rep(0, length.out=nrow(metatable))
 folds[covid_idxs] <- sample(rep(1:5, length.out=sum(covid_idxs)))

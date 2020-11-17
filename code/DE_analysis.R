@@ -4,10 +4,7 @@ library(magrittr)
 library(limma)
 library(robustbase)
 
-metatable_csv <- "Box Sync/COVID-host-expression/metatable_age_uncensored_with_viral_status.csv"
-## UNCOMMENT TO USE PUBLIC (AGE-CENSORED) DATA
-#metatable_csv <- "../data/metatable_with_viral_status.csv"
-
+metatable_csv <- "../data/metatable_with_viral_status.csv"
 counts_csv <- "../data/swab_gene_counts.csv"
 gene_annot_tsv <- "../annotation/gene2name.txt"
 
@@ -28,8 +25,8 @@ gene_annot_tsv %>%
 metatable$viral_status <- factor(metatable$viral_status, levels = c("SC2","no_virus","other_virus"))
 
 # Set up design matrix
-design_matrix <- model.matrix(~0 + viral_status + gender + age + sequencing_batch, data = metatable)
-colnames(design_matrix) <- c("SC2", "no_virus", "other_virus", "gender_M", "age", "SEQ003")
+design_matrix <- model.matrix(~0 + viral_status + gender + age, data = metatable)
+colnames(design_matrix) <- c("SC2", "no_virus", "other_virus", "gender_M", "age")
 
 # limma-voom
 vwts <- voom(counts, 
@@ -71,12 +68,12 @@ samples_to_reg <- metatable %>% filter(viral_status=="SC2", SC2_rpm >= 1) %>% pu
 # Perform robust regression of the limma-generated quantile normalized counts (log2 scale) on log10(SC2_rpm)
 rpm_gene_robs <- as.data.frame(t(sapply(genes_to_reg, function(g) {
   reg_data <- metatable %>% mutate("log_norm_counts" = vwts$E[g, ], "log_rpm" = log10(SC2_rpm)) %>% filter(CZB_ID %in% samples_to_reg) 
-  rob_reg <- summary(lmrob(log_norm_counts ~ gender + age + sequencing_batch + log_rpm, 
+  rob_reg <- summary(lmrob(log_norm_counts ~ gender + age + log_rpm, 
                            data = reg_data,
                            setting = "KS2014"))
   c("reg_intercept" = rob_reg$coefficients[1,1], 
-    "reg_slope" = rob_reg$coefficients[5,1], 
-    "reg_p_val" = rob_reg$coefficients[5,4], 
+    "reg_slope" = rob_reg$coefficients[4,1], 
+    "reg_p_val" = rob_reg$coefficients[4,4], 
     "reg_adj_R2" = rob_reg$adj.r.squared)
 })))
 
@@ -93,4 +90,3 @@ combined_de %>%
 
 # Write DE+regression table
 write.csv(combined_de, "../results/DE/3way_diff_expr_and_regression.csv")
-
