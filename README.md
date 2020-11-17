@@ -68,3 +68,6 @@ We used the Human Lung Cell Atlas dataset [Travaglini et al. (bioRxiv 2019)](htt
 
 Cell deconvolution analysis is in `code/host_deconvolution.ipynb`,
 with results in `results/deconvolution`.
+
+## Changes from the pre-print version
+The main difference from the pre-print version is the exclusion of 4 of the original 238 samples from all of the analyses because their group label was ambiguous. These samples are still available in the IDSeq reports and the raw sequencing data we deposited online. In addition, minor changes were made in the DE analysis as detailed in the peer review file accompanying the publication. 
