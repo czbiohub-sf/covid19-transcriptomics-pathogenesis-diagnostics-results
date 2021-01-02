@@ -95,7 +95,7 @@ reports_filterbg %>%
     df <- .
     ggplot(df, aes(x=sample_name, y=name, fill=nt_count)) +
       geom_tile() +
-      geom_point(data=dplyr::filter(df, p_adj < .05, nt_count >= 5)) +
+      geom_point(data=dplyr::filter(df, p_adj < .05, nt_count >= 10, nr_count >= 1)) +
       facet_grid(category ~ sequencing_batch + control,
                  scales="free", space="free", labeller="label_both") +
       scale_fill_gradientn(colours=c("turquoise", "violet", "orange"), trans="log10") +
